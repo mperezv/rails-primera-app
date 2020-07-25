@@ -1,0 +1,48 @@
+<p>
+    <strong>Título:</strong>
+    <%= @article.title %>
+</p>
+
+<p>
+    <strong>Texto:</strong>
+    <%= @article.text %>
+</p>
+
+<h2>Comentarios</h2>
+<%= render @article.comments %>
+
+<!--
+<% @article.comments.each do |comment| %>
+    <p>
+        <strong>Commenter:</strong>
+        <%= comment.commenter%>
+    </p>
+
+    <p>
+        <strong>Comment:</strong>
+        <%= comment.body %>
+    </p>
+<% end %>
+-->
+
+<h2>Añade un comentario:</h2>
+<%= render 'comments/form'%>
+<!--
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form|%>
+    <p>
+        <%= form.label :commenter %>
+        <%= form.text_field :commenter %>
+    </p>
+
+    <p>
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
+-->
+<%= link_to 'Editar', edit_article_path(@article) %><br>
+<%= link_to 'Volver', articles_path %>
