@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render "application/navbar" %>
+    <!--
+    <nav class="flex items-center justify-between flex-wrap bg-teal-300 p-6">
+
+      <%= link_to image_tag('logo.png', size: "20x20"), welcome_index_path %>
+
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <%= link_to 'Nuevo artículo', new_article_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4' %>
+          <%= link_to 'Blog', controller: 'articles', class: 'block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white' %>
+        </div>
+      </div>
+    </nav>
+    -->
+
+    <div class="m-4">
+      <%= yield %>
+    <div>
   </body>
 </html>
