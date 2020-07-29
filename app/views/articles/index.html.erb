@@ -1,19 +1,15 @@
-<h1>Todos los artículos</h1>
-
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Text</th>
-        <th></th>
-    </tr>
-
-    <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title%></td>
-            <td><%= article.text%></td>
-            <td><%= link_to 'Mostrar', article_path(article) %></td>
-            <td><%= link_to 'Editar', edit_article_path(article)%></td>
-            <td><%= link_to 'Borrar', article_path(article), method: :delete, data: { confirm: '¿Estás segura?'} %></td>
-        </tr>
-    <% end %>
-</table>
+<% @articles.each do |article| %>
+    <div class="m3 max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2"><%= article.title%></div>
+            <p class="text-gray-700 text-base">
+            <%= article.text%>
+            </p>
+        </div>
+        <div class="px-6 py-4">
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= link_to 'Mostrar', article_path(article) %></span>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"><%= link_to 'Editar', edit_article_path(article)%></span>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"><%= link_to 'Borrar', article_path(article), method: :delete, data: { confirm: '¿Estás segura?'} %></span>
+        </div>
+    </div>
+<% end %>
