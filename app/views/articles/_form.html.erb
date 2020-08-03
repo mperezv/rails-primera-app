@@ -15,16 +15,16 @@
  
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "btn btn-input" %>
   </p>
  
   <p>
     <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, class: "btn btn-input" %>
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit "Crear artículo", class: "btn-submit" %>
   </p>
  
 <% end %>
